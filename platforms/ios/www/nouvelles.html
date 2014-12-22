@@ -1,0 +1,46 @@
+<script src="js/moment-with-locales.min.js"></script>
+<script type="text/javascript" src="http:https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Accueil</span></a></div>
+    <div class="center sliding">Nouvelles</div>
+    <div class="right"><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a></div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="nouvelles" class="page">
+    <div class="page-content">
+      <div class="content-block-title">Nouvelles</div>
+
+      <!-- Media list block has additional "media-list" class -->
+      <div class="list-block media-list">
+          <ul>{{#each this}}
+              <li>
+                  <a href="nouvelle.html" class="item-content item-link" data-contextName="nouvelles.{{@index}}">
+                  <div class="item-content">
+                      <div class="item-media">
+                        {{#if important}}
+                            <img src="images/important.gif">
+                        {{else}}
+                            <img src="images/white.png">
+                        {{/if}}  
+                         
+                      </div>
+                      <div class="item-inner">
+                          <div class="item-title-row">
+                              <div class="item-title">{{titre}}</div>
+                              <div class="item-after">{{prettyTime pubDate}}
+                                
+                          </div>
+                          </div>
+                          <div class="item-text">{{message}}</div>
+                      </div>
+                  </div>
+                  </a>
+              </li>{{/each}}
+          </ul>
+      </div>  
+
+    </div>
+  </div>
+</div>
